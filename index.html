@@ -16,12 +16,31 @@
 		<div class="setup">
 			<i class='bx bxs-cog'></i>
 		</div>
-	
-		<h1>PomodoroTS</h1>
-	
-		<input type="text" id="taskName" placeholder="Nom de la tâche à effectuer...">
-		
-		<script src="./assets/ts/app.ts"></script>
+		<div class="home-screen" id="homeScreen">
+			<h1>PomodoroTS</h1>
+			<input type="text" id="taskName" placeholder="Nom de la tâche à effectuer...">
+			<button type="button" onclick="startPomo()">Commencer</button>
+		</div>
+		<div class="pomo-screen" id="pomoScreen">
+			<div class="circle">
+				<svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+				   <g transform="translate(110,110)">
+					  <circle r="100" class="e-c-base"/>
+					  <g transform="rotate(-90)">
+						 <circle r="100" class="e-c-progress"/>
+						 <g id="e-pointer">
+							<circle cx="100" cy="0" r="8" class="e-c-pointer"/>
+						 </g>
+					  </g>
+				   </g>
+				</svg>
+			</div>
+			<div class="controlls">
+				<div class="display-remain-time">25:00</div>
+				<button class="play" id="pause"></button>
+			</div>
+		</div>
 	</div>
+	<script src="./assets/js/app.js"></script>
 </body>
 </html>

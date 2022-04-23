@@ -1,40 +1,137 @@
+/* Globals */
 *, ::before, ::after {margin: 0;padding: 0;box-sizing: border-box}
 body {font-family: 'Montserrat', Arial, sans-serif;color: #fff}
 
+/* App */
 .app {
 	max-width: 390px;
 	height: 100vh;
 	margin: auto;
 	background: #2980b9;
 }
-
 .setup {
 	width: 55px;
 	background: #fff;
 	border-radius: 0 0 50px 0;
 }
-
 .setup i {
 	padding: 0.5rem;
 	padding-bottom: 1rem;
 	font-size: 1.5rem;
 	color: #2980b9;
 }
-
-h1 {
-	margin-top: 1rem;
+.home-screen h1 {
+	margin-block: 10rem;
 	text-align: center;
+	font-size: 3rem;
 	font-weight: 500;
+	text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2) 
 }
-
-input {
+.home-screen input {
 	all: unset;
 	display: block;
 	width: 80%;
-	padding: 0.6rem;
-	margin: 10rem auto;
+	margin: auto;
+	padding: 1rem 0.5rem;
+	font-size: 1.2rem;
 	background: #fff;
 	border-radius: 5px;
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 	color: #303030;
 }
+.home-screen button {
+	all: unset;
+	display: block;
+	margin: 3rem auto;
+	padding: 0.5rem;
+	font-size: 1.1rem;
+	font-weight: 500;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	color: #2980b9;
+	transition: .3s ease-in-out;
+	cursor: pointer;
+}
+.home-screen button:hover {
+	box-shadow: unset;
+	background: #2980b9;
+	color: #fff;
+}
+
+.home-screen {
+	display: none;
+}
+.pomo-screen {
+	display: block;
+}
+
+/* Timer */
+.circle {
+	position: absolute;
+	top: 5rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.controlls {
+	margin-top: 7rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.display-remain-time {
+	font-weight: 300;
+	font-size: 65px;
+	color: #fff;
+}
+#pause {
+	outline: none;
+	background: transparent;
+	border: none;
+	margin-top: 10px;
+	width: 50px;
+	height: 50px;
+	position: relative;
+}
+.play::before {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 8px;
+	left: 16px;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 22px solid #fff;
+}
+.pause::after {
+	content: "";
+	position: absolute;
+	top: 8px;
+	left: 14px;
+	width: 22px;
+	height: 30px;
+	background-color: transparent;
+	border-radius: 1px;
+	border: 5px solid #fff;
+	border-top: none;
+	border-bottom: none;
+}
+.e-c-base {
+	fill: none;
+	stroke: #303030;
+	stroke-width: 4px
+}
+.e-c-progress {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 4px;
+	transition: stroke-dashoffset 0.7s;
+}
+.e-c-pointer {
+	fill: #2980b9;
+	stroke: #fff;
+	stroke-width: 2px;
+}
+#e-pointer { transition: transform 0.7s }
